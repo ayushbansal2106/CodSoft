@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator">
+        
+        <div class="screen">
+            <div class="previous-operation" id="previousOperation"></div>
+            <div class="main-display" id="mainDisplay">0</div>
+        </div>
+
+        <div class="button-grid">
+            <button class="btn clear-btn" id="btnC" onclick="clearAll()">C</button>
+            <button class="btn num-btn" id="btn7" onclick="pressNumber('7')">7</button>
+            <button class="btn num-btn" id="btn8" onclick="pressNumber('8')">8</button>
+            <button class="btn num-btn" id="btn9" onclick="pressNumber('9')">9</button>
+            <button class="btn op-btn divide-btn" id="btnDivide" onclick="selectOperation('÷')">÷</button>
+            <button class="btn op-btn" id="btnAdd" onclick="selectOperation('+')">+</button>
+            
+            <button class="btn back-btn" id="btnBack" onclick="deleteLastDigit()">Back</button>
+            <button class="btn num-btn" id="btn4" onclick="pressNumber('4')">4</button>
+            <button class="btn num-btn" id="btn5" onclick="pressNumber('5')">5</button>
+            <button class="btn num-btn" id="btn6" onclick="pressNumber('6')">6</button>
+            <button class="btn op-btn multiply-btn" id="btnMultiply" onclick="selectOperation('×')">×</button>
+            <button class="btn op-btn" id="btnSubtract" onclick="selectOperation('-')">−</button>
+            
+            <button class="btn history-btn" id="btnHistory" onclick="toggleHistory()">Hist</button>
+            <button class="btn num-btn" id="btn1" onclick="pressNumber('1')">1</button>
+            <button class="btn num-btn" id="btn2" onclick="pressNumber('2')">2</button>
+            <button class="btn num-btn" id="btn3" onclick="pressNumber('3')">3</button>
+            <button class="btn op-btn minus-btn" id="btnMinus" onclick="selectOperation('-')">−</button>
+            <button class="btn op-btn" id="btnMultiplyAlt" onclick="selectOperation('*')">∗</button>
+            
+            <button class="btn blank-btn"></button>
+            <button class="btn num-btn" id="btn0" onclick="pressNumber('0')">0</button>
+            <button class="btn blank-btn"></button>
+            <button class="btn num-btn" id="btnDot" onclick="pressNumber('.')">.</button>
+            <button class="btn op-btn equals-btn" id="btnEquals" onclick="computeAnswer()">=</button>
+            <button class="btn op-btn" id="btnDivideAlt" onclick="selectOperation('/')">/"</button>
+        </div>
+        
+    </div>
+
+    <!-- History Panel -->
+    <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+            <h3>History</h3>
+            <button class="close-history" onclick="toggleHistory()">×</button>
+        </div>
+        <div class="history-list" id="historyList">
+            <p class="no-history">No calculations yet</p>
+        </div>
+        <button class="clear-history-btn" onclick="clearHistory()">Clear History</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
